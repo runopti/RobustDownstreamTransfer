@@ -220,6 +220,7 @@ def main():
         raise ValueError('The output file must be a pkl file.')
 
     cfg = mmcv.Config.fromfile(args.config)
+    cfg['custom_imports'] = dict(imports=['extensions.custom_pipeline'], allow_failed_imports=False)
     if args.cfg_options is not None:
         cfg.merge_from_dict(args.cfg_options)
     # import modules from string list.
