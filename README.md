@@ -5,6 +5,33 @@ This repository contains the code to reproduce the results of our paper:
 
 ![](https://i.imgur.com/7P0w0yo.png)
 
+## Requirements
+To install requirements, follow the installation guide in [MMDetection](https://mmdetection.readthedocs.io/en/latest/get_started.html#installation) and [MMSegmentation](https://mmsegmentation.readthedocs.io/en/latest/get_started.html#installation).
+For example,
+
+```
+conda install pytorch torchvision -c pytorch
+pip install -U openmim
+mim install mmcv-full
+pip install mmdet
+pip install mmsegmentation
+pip install imagecorruptions
+```
+
+Specific versions we tested are in `requirements.txt`.
+
+## Data
+Download [COCO2017](https://cocodataset.org/#download) and save the data in `data/coco/`.
+
+```
+./
+└── data
+    └── coco
+        ├── annotations
+        └── val2017
+```
+
+## Benchmarking
 
 - To measure how well a model transfers robustness from ImageNet classification to downstream tasks, we have to prepare the same set of distributional shifts that can be applied to both classification and downstream tasks. We focus on 15 synthetic image corruption types, originally introduced in ImageNet-C [1]. 
 - We use the [python package](https://github.com/bethgelab/imagecorruptions) to generate synthetic corruptions. Inspired by the [Corruption Benchmarking tool](https://mmdetection.readthedocs.io/en/latest/robustness_benchmarking.html) for object detection [2] provided in [mmdetection](https://github.com/open-mmlab/mmdetection), we modified the data pipeline of [mmsegmentation](https://github.com/open-mmlab/mmsegmentation) to incorporate image corruptions into the performance evaluation.
