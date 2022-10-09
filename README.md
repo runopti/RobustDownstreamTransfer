@@ -44,7 +44,7 @@ The trained models and config files for each training setting is listed below:
 
 | Fixed-Feature Transfer Learning| Regular | ANT  | DeepAug+AugMix | Swin-T |
 | ----------- | ----------- |----------- | -----------|-----------|
-| Detection (MSCOCO)      |   model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmdetection/configs/mask_rcnn/mask_rcnn_r50_fpn_2x_lr0.04_coco_fixedfeature.py)     | model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmdetection/configs/mask_rcnn/mask_rcnn_r50_ant_fpn_2x_lr0.04_coco_fixedfeature.py) | model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmdetection/configs/mask_rcnn/mask_rcnn_r50_deepaug_augmix_fpn_2x_lr0.04_coco_fixedfeature.py) | model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/configs/swin/mask_rcnn_swin-t-p4-w7_fpn_fp16_ms-crop-2x_coco_fixedfeature.py) |
+| Detection (MSCOCO)      |   [model](https://github.com/runopti/RobustDownstreamTransfer/releases/download/v1.0.0/fixedfeature_cocodetect_regular_epoch_24.pth) / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmdetection/configs/mask_rcnn/mask_rcnn_r50_fpn_2x_lr0.04_coco_fixedfeature.py)     | [model](https://github.com/runopti/RobustDownstreamTransfer/releases/download/v1.0.0/fixedfeature_cocodetect_ant_epoch_24.pth) / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmdetection/configs/mask_rcnn/mask_rcnn_r50_ant_fpn_2x_lr0.04_coco_fixedfeature.py) | [model](https://github.com/runopti/RobustDownstreamTransfer/releases/download/v1.0.0/fixedfeature_cocodetect_deepaugaugmix_epoch_24.pth) / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmdetection/configs/mask_rcnn/mask_rcnn_r50_deepaug_augmix_fpn_2x_lr0.04_coco_fixedfeature.py) | [model](https://github.com/runopti/RobustDownstreamTransfer/releases/download/v1.0.0/fixedfeature_cocodetect_swinT_epoch_24.pth) / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/configs/swin/mask_rcnn_swin-t-p4-w7_fpn_fp16_ms-crop-2x_coco_fixedfeature.py) |
 | Segmentation (ADE20K)   | model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmsegmentation/configs/upernet/upernet_r50_512x512_80k_ade20k_regular_fixedfeature.py)      | model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmsegmentation/configs/upernet/upernet_r50_512x512_80k_ade20k_ant_fixedfeature.py) | model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmsegmentation/configs/upernet/upernet_r50_512x512_80k_ade20k_deepaug_augmix_fixedfeature.py) | model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmsegmentation/configs/swin/upernet_swin_tiny_patch4_window7_512x512_80k_ade20k_pretrain_224x224_1K_fixedfeature.py) |
 
 
@@ -66,6 +66,7 @@ The trained models and config files for each training setting is listed below:
 
 
 
+
 ## Bibtex
 ```
 @inproceedings{robusttransfer,
@@ -83,4 +84,5 @@ Autonomous Driving when Winter is Coming](https://arxiv.org/abs/1907.07484)" Mac
  - [3] Salman et al. "[Do Adversarially Robust ImageNet Models Transfer Better?](https://github.com/Microsoft/robust-models-transfer)" NeurIPS 2020
  - [4] Modas and Rade et al. "[PRIME: A Few Primitives Can Boost
 Robustness to Common Corruptions](https://arxiv.org/abs/2112.13547)" arXiv 2021. 
+
 
