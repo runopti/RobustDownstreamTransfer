@@ -67,7 +67,6 @@ For training/fine-tuning, we based off of the following repositories:
 
 The trained models and config files for each training setting is listed below:
 
-- Fixed-Feature Transfer Learning
 
 | Fixed-Feature Transfer Learning| Regular | ANT  | DeepAug+AugMix | Swin-T |
 | ----------- | ----------- |----------- | -----------|-----------|
@@ -83,13 +82,13 @@ The trained models and config files for each training setting is listed below:
 
 - For classification (cifar10), we used the code from [3] with epochs=150, lr=0.01, step-lr=30, batch-size=64, weight-decay=5e-4 for all cases (e.g. Regular, ANT, DeepAug+, and Swin-T.)
 
-- We also investigat a recently proposed data augmentation technique to improve common corruption robustness called 'PRIME' [4] and apply it during transfer learning from ImageNet-pretrained models.
+- We also investigate a recently proposed data augmentation technique to improve common corruption robustness called 'PRIME' [4] and apply it during transfer learning from ImageNet-pretrained models.
 
 
 | PRIME Data Aug during Transfer Learning| Regular | PRIME  | DeepAug+AugMix | Swin-T |
 | ----------- | ----------- |----------- | -----------|-----------|
-| Detection (MSCOCO)      |   model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmdetection/configs/mask_rcnn/mask_rcnn_r50_prime_fpn_2x_lr0.04_coco.py)     | model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmdetection/configs/mask_rcnn/mask_rcnn_r50_prime_while_finetune_prime_fpn_2x_lr0.04_coco.py) | model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmdetection/configs/mask_rcnn/mask_rcnn_r50_prime_while_finetune_deepaug_fpn_2x_lr0.04_coco.py) | model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmdetection/configs/swin/mask_rcnn_prime_while_finetune_swin-t-p4-w7_fpn_fp16_ms-crop-2x_coco.py) |
-| Segmentation (ADE20K)   | model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmsegmentation/configs/upernet/upernet_r50_512x512_80k_ade20k_prime_while_finetune_regular.py)      | model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmsegmentation/configs/upernet/upernet_r50_512x512_80k_ade20k_prime_while_finetune_prime.py) | model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmsegmentation/configs/upernet/upernet_r50_512x512_80k_ade20k_prime_while_finetune_deepaug_augmix.py) | model / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmsegmentation/configs/swin/upernet_swin_tiny_patch4_window7_512x512_80k_ade20k_pretrain_224x224_1K_prime_while_finetune.py) |
+| Detection (MSCOCO)      |   [model](https://github.com/runopti/RobustDownstreamTransfer/releases/download/v1.0.0/primefinetune_cocodetect_regular_epoch_24.pth) / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmdetection/configs/mask_rcnn/mask_rcnn_r50_prime_fpn_2x_lr0.04_coco.py)     | [model](https://github.com/runopti/RobustDownstreamTransfer/releases/download/v1.0.0/primefinetune_cocodetect_prime_epoch_24.pth) / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmdetection/configs/mask_rcnn/mask_rcnn_r50_prime_while_finetune_prime_fpn_2x_lr0.04_coco.py) | [model](https://github.com/runopti/RobustDownstreamTransfer/releases/download/v1.0.0/primefinetune_cocodetect_deepaugaugmix_epoch_24.pth) / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmdetection/configs/mask_rcnn/mask_rcnn_r50_prime_while_finetune_deepaug_fpn_2x_lr0.04_coco.py) | [model](https://github.com/runopti/RobustDownstreamTransfer/releases/download/v1.0.0/primefinetune_cocodetect_swinT_epoch_24.pth) / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmdetection/configs/swin/mask_rcnn_prime_while_finetune_swin-t-p4-w7_fpn_fp16_ms-crop-2x_coco.py) |
+| Segmentation (ADE20K)   | [model](https://github.com/runopti/RobustDownstreamTransfer/releases/download/v1.0.0/primefinetune_ade20k_regular_iter_80000.pth) / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmsegmentation/configs/upernet/upernet_r50_512x512_80k_ade20k_prime_while_finetune_regular.py)      | [model](https://github.com/runopti/RobustDownstreamTransfer/releases/download/v1.0.0/primefinetune_ade20k_prime_iter_80000.pth) / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmsegmentation/configs/upernet/upernet_r50_512x512_80k_ade20k_prime_while_finetune_prime.py) | [model](https://github.com/runopti/RobustDownstreamTransfer/releases/download/v1.0.0/primefinetune_ade20k_deepaugaugmix_iter_80000.pth) / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmsegmentation/configs/upernet/upernet_r50_512x512_80k_ade20k_prime_while_finetune_deepaug_augmix.py) | [model](https://github.com/runopti/RobustDownstreamTransfer/releases/download/v1.0.0/primefinetune_ade20k_swinT_iter_80000.pth) / [config](https://github.com/runopti/RobustDownstreamTransfer/blob/main/mmsegmentation/configs/swin/upernet_swin_tiny_patch4_window7_512x512_80k_ade20k_pretrain_224x224_1K_prime_while_finetune.py) |
 
 
 
@@ -110,6 +109,6 @@ The trained models and config files for each training setting is listed below:
 Autonomous Driving when Winter is Coming](https://arxiv.org/abs/1907.07484)" Machine Learning for Autonomous Driving Workshop at NeurIPS 2019
  - [3] Salman et al. "[Do Adversarially Robust ImageNet Models Transfer Better?](https://github.com/Microsoft/robust-models-transfer)" NeurIPS 2020
  - [4] Modas and Rade et al. "[PRIME: A Few Primitives Can Boost
-Robustness to Common Corruptions](https://arxiv.org/abs/2112.13547)" arXiv 2021. 
+Robustness to Common Corruptions](https://arxiv.org/abs/2112.13547)" ECCV 2022. 
 
 
